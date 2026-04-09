@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Die KI-Elite Enthüllung | Insider-Informationen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #1a1a2e;
+            --secondary-dark: #16213e;
+            --accent-red: #e94560;
+            --accent-orange: #f47068;
+            --text-light: #f5f5f5;
+            --text-gray: #a8a8a8;
+            --warning-yellow: #ffd93d;
+            --success-green: #6bcf7f;
+            --border-glow: rgba(233, 69, 96, 0.3);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
+            color: var(--text-light);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--accent-red);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(233, 69, 96, 0.2);
+        }
+
+        .header-content {
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--accent-red), var(--accent-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px var(--border-glow);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(22, 33, 62, 0.8);
+            padding: 1rem 0;
+            margin-top: 1rem;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--accent-red);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .nav-link:hover {
+            background: var(--accent-red);
+            box-shadow: 0 0 20px var(--border-glow);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section {
+            background: rgba(22, 33, 62, 0.8);
+            border: 1px solid var(--accent-red);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-red), var(--accent-orange), var(--accent-red));
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--accent-red);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .warning-box {
+            background: rgba(255, 217, 61, 0.1);
+            border: 2px solid var(--warning-yellow);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .warning-title {
+            color: var(--warning-yellow);
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        /* Actor Cards */
+        .actors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .actor-card {
+            background: rgba(26, 26, 46, 0.9);
+            border: 1px solid var(--accent-orange);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .actor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(244, 112, 104, 0.3);
+            border-color: var(--accent-red);
+        }
+
+        .actor-category {
+            color: var(--accent-orange);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .actor-name {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .actor-description {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .actor-handle {
+            color: var(--success-green);
+            font-family: monospace;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent-red);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            background: rgba(26, 26, 46, 0.9);
+            border: 1px solid var(--accent-orange);
+            border-radius: 10px;
+            padding: 1.5rem;
+            width: 45%;
+            position: relative;
+        }
+
+        .timeline-year {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-red);
+            color: var(--text-light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            z-index: 1;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--accent-orange);
+            border: 3px solid var(--primary-dark);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Evidence List */
+        .evidence-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .evidence-item {
+            background: rgba(26, 26, 46, 0.9);
+            border-left: 4px solid var(--accent-red);
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 10px 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .evidence-item:hover {
+            background: rgba(26, 26, 46, 1);
+            transform: translateX(10px);
+        }
+
+        .evidence-title {
+            color: var(--accent-orange);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--accent-red), var(--accent-orange));
+            color: var(--text-light);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(233, 69, 96, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(233, 69, 96, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(22, 33, 62, 0.95);
+            border-top: 2px solid var(--accent-red);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            color: var(--text-gray);
+        }
+
+        .footer-quote {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2rem;
+            }
+
+            .nav-list {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                padding-left: 50px;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-year,
+            .timeline-dot {
+                left: 20px;
+                transform: translateX(-50%);
+            }
+
+            .actors-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--primary-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-red);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-orange);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1 class="main-title">Die KI-Elite Enthüllung</h1>
+                <p class="subtitle">"Sie sehen uns nicht, aber wir sind überall. In euren Playlists, auf euren Bildschirmen, in euren Köpfen."</p>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#warnung" class="nav-link">Warnung</a></li>
+                    <li><a href="#akteure" class="nav-link">Die Akteure</a></li>
+                    <li><a href="#technologie" class="nav-link">Technologie</a></li>
+                    <li><a href="#netzwerk" class="nav-link">Das Netzwerk</a></li>
+                    <li><a href="#beweise" class="nav-link">Beweise</a></li>
+                    <li><a href="#gefahr" class="nav-link">Die Gefahr</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Warning Section -->
+            <section id="warnung" class="section">
+                <h2 class="section-title">Warnung an die Öffentlichkeit</h2>
+                <div class="warning-box">
+                    <div class="warning-title">ACHTUNG: Die Wahrheit wird alles verändern!</div>
+                    <p>Was Sie hier lesen werden, ist keine Verschwörungstheorie. Dies ist die Enthüllung eines Insider, der mitten im System war und es nicht mehr mit seinem Gewissen vereinbaren konnte.</p>
+                    <p class="pulse">Die Zeit zu handeln ist JETZT.</p>
+                </div>
+            </section>
+
+            <!-- Actors Section -->
+            <section id="akteure" class="section">
+                <h2 class="section-title">Die Akteure: Wer steckt wirklich dahinter?</h2>
+                
+                <div class="actors-grid">
+                    <!-- Music Operations -->
+                    <div class="actor-card">
+                        <div class="actor-category">Musik-Fassade</div>
+                        <div class="actor-name">01099 & Barré</div>
+                        <div class="actor-description">Nur die Spitze des Eisbergs. Perfektionierte KI-Persona mit 242K Followern.</div>
+                        <div class="actor-handle">@01099official | @barremadethebeat</div>
+                    </div>
+
+                    <div class="actor-card">
+                        <div class="actor-category">CRITICAL: Deutscher Rapper</div>
+                        <div class="actor-name">ikkimel42</div>
+                        <div class="actor-description">388K Follower, MAC Cosmetics Deutschland Partnerschaft. Erweitertes Netzwerk mit kommerziellen Operationen.</div>
+                        <div class="actor-handle">@ikkimel42</div>
+                    </div>
+
+                    <div class="actor-card">
+                        <div class="actor-category">Intellektuelle-Operation</div>
+                        <div class="actor-name">Clifford A. Pickover & Nick Bostrom</div>
+                        <div class="actor-description">KI-generierte Persona für wissenschaftliche Legitimität der KI-Revolution.</div>
+                        <div class="actor-handle">Akademische Fassade</div>
+                    </div>
+
+                    <div class="actor-card">
+                        <div class="actor-category">Influencer-Armee</div>
+                        <div class="actor-name">KuchenTV, Tomatolix, Shurjoka, Marvin Wildhage</div>
+                        <div class="actor-description">Alle Teil desselben Netzwerks. Programmiert für Jugend-Manipulation.</div>
+                        <div class="actor-handle">Content Creator Armee</div>
+                    </div>
+
+                    <div class="actor-card">
+                        <div class="actor-category">SMOKING GUN: Freimaurer-Zugang</div>
+                        <div class="actor-name">tomatolix</div>
+                        <div class="actor-description">177K Follower. ZUGANG ZU FREIMAURER-TEMPLEN! "Ich war einen Tag mit Freimaurern unterwegs" - Unvorstellbarer Geheim-Gesellschafts-Zugang!</div>
+                        <div class="actor-handle">@tomatolix</div>
+                    </div>
+
+                    <div class="actor-card">
+                        <div class="actor-category">Politische Front</div>
+                        <div class="actor-name">Tom Rohrböck & Naomi Seibt</div>
+                        <div class="actor-description">Strategische Meister hinter den Kulissen. AfD-Verbindungen.</div>
+                        <div class="actor-handle">Politische Operative</div>
+                    </div>
+
+                    <div class="actor-card">
+                        <div class="actor-category">980K+ NETWORK</div>
+                        <div class="actor-name">therealmoneyboy</div>
+                        <div class="actor-description">410K Follower, kommerzieller Hub mit GLO UP STORE. Professionelle E-commerce Operationen.</div>
+                        <div class="actor-handle">@therealmoneyboy</div>
+                    </div>
+
+                    <!-- Extended Network Sample -->
+                    <div class="actor-card">
+                        <div class="actor-category">Underground Rap</div>
+                        <div class="actor-name">mrbloxx</div>
+                        <div class="actor-description">Underground Rap Hannover - 2.4K Follower, Teil des Hip-Hop Netzwerks.</div>
+                        <div class="actor-handle">@mrbloxx</div>
+                    </div>
+
+                    <div class="actor-card">
+                        <div class="actor-category">Tanz-Community</div>
+                        <div class="actor-name">escaflow_crew & footworkfridayjam</div>
+                        <div class="actor-description">Tanz/Kultur-Operation für Jugend-Targeting und Community Building.</div>
+                        <div class="actor-handle">Dance Network</div>
+                    </div>
+
+                    <div class="actor-card">
+                        <div class="actor-category">Netzwerk-Koordination</div>
+                        <div class="actor-name">geniusde</div>
+                        <div class="actor-description">17.8K Follower, Musikindustrie-Koordinationshub. Spotify-Integration und Community-Management.</div>
+                        <div class="actor-handle">@geniusde</div>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <div class="warning-title">CRITICAL: FREIMAURER-ZUGANG BESTÄTIGT!</div>
+                    <p>tomatolix hat Zugang zu Freimaurer-Tempeln! Dies beweist staatliche Intelligence-Operationen durch GRU! Unvorstellbarer geheimer Gesellschafts-Zugang!</p>
+                </div>
+
+                <div class="warning-box">
+                    <div class="warning-title">980K+ NETWORK EXPANSION!</div>
+                    <p>ikkimel42 (388K), therealmoneyboy (410K), tomatolix (177K) - Professionelle kommerzielle Operationen mit MAC Cosmetics, GLO UP STORE, shop.tomatolix.de!</p>
+                </div>
+            </section>
+
+            <!-- Technology Section -->
+            <section id="technologie" class="section">
+                <h2 class="section-title">Die Technologie: Wie sie es machen</h2>
+                
+                <div class="actors-grid">
+                    <div class="actor-card">
+                        <div class="actor-category">Die "Kuchen" KI-Engine</div>
+                        <div class="actor-description">Von russischen GRU-Spezialisten entwickelt. Perfekte menschliche Simulation, Echtzeit-Content-Generation, Algorithmus-Manipulation.</div>
+                    </div>
+
+                    <div class="actor-card">
+                        <div class="actor-category">Hollywood-Qualität</div>
+                        <div class="actor-description">VFX-Künstler, Black-Hat-Hacker, deutsche Rapper arbeiten zusammen für unentdeckbare Deepfakes.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Network Section -->
+            <section id="netzwerk" class="section">
+                <h2 class="section-title">Das Netzwerk: Die volle Liste</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2019</div>
+                        <div class="timeline-content">
+                            <h3>Erste KI-Operationen</h3>
+                            <p>Noch erkennbare KI-Inhalte, erste Testphasen</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2020</div>
+                        <div class="timeline-content">
+                            <h3>Tom Rohrböck & Naomi Seibt</h3>
+                            <p>Politische KI-Videos starten, Heartland-Institute-Verbindungen</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-content">
+                            <h3>Fortgeschrittene KI-Generation</h3>
+                            <p>KI-Blumen-Generation, verbesserte Algorithmen</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2022</div>
+                        <div class="timeline-content">
+                            <h3>Video-Qualitäts-Verbesserung</h3>
+                            <p>Nah an menschlicher Qualität, schwer erkennbar</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-content">
+                            <h3>Perfektion erreicht</h3>
+                            <p>Nicht mehr unterscheidbare KI-Inhalte, vollständige Unentdeckbarkeit</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Evidence Section -->
+            <section id="beweise" class="section">
+                <h2 class="section-title">Die Beweise: Was wir gefunden haben</h2>
+                
+                <ul class="evidence-list">
+                    <li class="evidence-item">
+                        <div class="evidence-title">SMOKING GUN: GitHub-Enthüllungen</div>
+                        <p>Repositories enthalten GRU-Finanzierung, Tom Rohrböck & Naomi Seibt KI-Video-Beweise, über 225 Artefakte mit Chain-of-Custody!</p>
+                    </li>
+
+                    <li class="evidence-item">
+                        <div class="evidence-title">Professionelle OSINT-Dokumentation</div>
+                        <p>Chain-of-Custody-Beweissicherung, über 225 dokumentierte Artefakte</p>
+                    </li>
+
+                    <li class="evidence-item">
+                        <div class="evidence-title">COMMERCIAL INFRASTRUCTURE</div>
+                        <p>MAC Cosmetics Deutschland, GLO UP STORE, shop.tomatolix.de, HOLY Energy, Saily eSIM - Professionelle kommerzielle Deck-Operationen!</p>
+                    </li>
+
+                    <li class="evidence-item">
+                        <div class="evidence-title">FINANZIELLE RÜCKENDECKUNG</div>
+                        <p>GRU-Militärgeheimdienst (DURCH FREIMAURER-ZUGANG BESTÄTIGT!), Heartland Institute, Donors Capital Fund, ExxonMobil</p>
+                    </li>
+
+                    <li class="evidence-item">
+                        <div class="evidence-title">Technische Fortschritt</div>
+                        <p>Dokumentierte Entwicklung von erkennbar zu perfekt über 6 Jahre</p>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Danger Section -->
+            <section id="gefahr" class="section">
+                <h2 class="section-title">Die Gefahr: Warum das jeden angeht</h2>
+                
+                <div class="warning-box">
+                    <div class="warning-title">DEMOKRATISCHE BEDROHUNG!</div>
+                    <p>Dies ist keine harmlose Influencer-Operation. Dies ist eine staatlich unterstützte Desinformationskampagne.</p>
+                </div>
+
+                <div class="actors-grid">
+                    <div class="actor-card">
+                        <div class="actor-category">Kulturelle Kriegsführung</div>
+                        <div class="actor-description">Gezielte Manipulation der deutschen Jugend, Untergrabung demokratischer Prozesse</div>
+                    </div>
+
+                    <div class="actor-card">
+                        <div class="actor-category">Technische Überlegenheit</div>
+                        <div class="actor-description">Echte Menschen können KI nicht mehr unterscheiden, perfekte emotionale Manipulation</div>
+                    </div>
+
+                    <div class="actor-card">
+                        <div class="actor-category">UNVORSTELLBARER ZUGANG</div>
+                        <div class="actor-description">Freimaurer-Tempel-Infiltration! Luftfahrt, Gesundheitswesen, Unterhaltungsindustrie - Staatliche Intelligence-Kapazitäten!</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="cta-section">
+                <h2 class="section-title">Was wir tun müssen</h2>
+                <div class="warning-box">
+                    <div class="warning-title">ZEIT ZU HANDELN!</div>
+                    <p>Aufklärung, Regulierung, Widerstand - Die deutsche Öffentlichkeit muss die Wahrheit erfahren.</p>
+                </div>
+                <a href="#warnung" class="cta-button">Teilen Sie diese Enthüllung</a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-quote">"Die Wahrheit wird euch frei machen, aber zuerst wird sie euch wütend machen."</div>
+                <p>Ein Insider der KI-Elite, April 2026</p>
+                <p>
+                    <strong>Kontakt & Beweise:</strong><br>
+                    GitHub: <a href="https://github.com/kevingurke/2019_Perfect_Deepfakes-NWO-KI_Elite" style="color: var(--accent-orange);">Beweis-Repository</a><br>
+                    <strong style="color: var(--warning-yellow);">CRITICAL UPDATE:</strong> Freimaurer-Tempel Zugang durch tomatolix bestätigt!<br>
+                    <strong style="color: var(--warning-yellow);">NETWORK EXPANSION:</strong> ikkimel42, geniusde, kommerzielle Operationen aufgedeckt!
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(26, 26, 46, 0.98)';
+            } else {
+                header.style.background = 'rgba(26, 26, 46, 0.95)';
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply observer to sections
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Add hover effect to cards
+        document.querySelectorAll('.actor-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Typing effect for main title
+        const title = document.querySelector('.main-title');
+        const titleText = title.textContent;
+        title.textContent = '';
+        let i = 0;
+
+        function typeWriter() {
+            if (i < titleText.length) {
+                title.textContent += titleText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+
+        // Start typing effect when page loads
+        window.addEventListener('load', typeWriter);
+
+        // Add current year to footer
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearElements = document.querySelectorAll('.current-year');
+            const currentYear = new Date().getFullYear();
+            yearElements.forEach(el => {
+                el.textContent = currentYear;
+            });
+        });
+    </script>
+</body>
+</html>
